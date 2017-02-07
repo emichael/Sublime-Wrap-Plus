@@ -229,7 +229,7 @@ sep_chars = '!@#$%^&*=+`~\'\":;.,?_-'
 sep_line = '[' + sep_chars + r']+[ \t'+sep_chars+']*'
 
 # Break pattern is a little ambiguous.  Something like "# Header" could also be a list element.
-break_pattern = re.compile(r'^[\t ]*' + OR(sep_line, OR(latex_hack, rest_directive) + '.*') + '$')
+break_pattern = re.compile(r'^[\t ]+' + OR(sep_line, OR(latex_hack, rest_directive) + '.*') + '$')
 pure_break_pattern = re.compile(r'^[\t ]*' + sep_line + '$')
 
 email_quote = r'[\t ]*>[> \t]*'
